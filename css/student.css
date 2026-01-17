@@ -75,3 +75,104 @@
 .nav-item:focus {
   outline: none;
 }
+
+.main-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: #aabd8c;
+  padding: 2rem;
+  height: 10rem;
+  width: 25rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.attendance-table {
+  width: 100%;
+  max-width: 80.5rem;
+  margin-top: 1.25rem;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.attendance-table thead {
+  background-color: #2f5d8a;
+  color: #ffffff;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.attendance-table tbody tr:nth-child(even) {
+  background-color: #f5f7fa;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: #eef3f9;
+}
+
+.good {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.low {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.fee-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 62.5rem;
+}
+
+/* Individual card */
+.fee-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.fee-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #2f5d8a;
+}
+
+/* Amount */
+.amount {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Colors */
+.scholarship {
+  color: #2e7d32;
+}
+
+.payable {
+  color: #1565c0;
+}
+
+.remaining {
+  color: #c62828;
+}

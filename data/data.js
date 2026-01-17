@@ -130,3 +130,13 @@ const fee = {
   hostel: 65000,
   college: 136000,
 };
+
+const courses = {
+  course1: "Data Science Fundamentals",
+  course2: "Object Oriented Programming Using JAVA",
+  course3: "Competitive Programming Lab",
+  course4: "Aptitude 1",
+  course5: "Basic Electrical and Electronics Engineering",
+  course6: "Linear Algebra and Vector Calculus",
+  course7: "Physics for Computation Technologies",
+};
