@@ -35,13 +35,7 @@ headContent += `
 
         <div class="logout">
         <button
-            style="
-            background-color: red;
-            padding: 0.5rem;
-            margin: 0.6rem;
-            border: 2px solid black;
-            border-radius: 0.7rem;
-            "
+            onclick="logout()"
         >
             Sign Out
         </button>
@@ -258,8 +252,6 @@ function overallPercent(matchingItem) {
 
   return sum / 5;
 }
-
-
 
 function courseAttendance(matchingItem, attHTML) {
   teachers.forEach((teacher, index) => {
