@@ -3,7 +3,7 @@ export const students = [
     UID: "25LBCS1001",
     email: "25lbcs1001@gmail.com",
     pass: "example123",
-    name: "hariom maurya",
+    name: "Hariom maurya",
     fee: { collegeR: 0, hostel: 65000 },
     attendance: {
       att1: 3,
@@ -19,7 +19,7 @@ export const students = [
     UID: "25LBCS1002",
     email: "25lbcs1002@gmail.com",
     pass: "example123",
-    name: "madhav agarwal",
+    name: "Madhav Agarwal",
     fee: { collegeR: 45230, hostel: 45000 },
     attendance: {
       att1: 1,
@@ -35,7 +35,7 @@ export const students = [
     UID: "25LBCS1003",
     email: "25lbcs1003@gmail.com",
     pass: "example123",
-    name: "anshuman",
+    name: "Anshuman Shrivastav",
     fee: { collegeR: 5500, hostel: 6500 },
     attendance: {
       att1: 2,
@@ -51,7 +51,7 @@ export const students = [
     UID: "25LBCS1004",
     email: "25lbcs1004@gmail.com",
     pass: "example123",
-    name: "Krishnam",
+    name: "Krishnam Rajawat",
     fee: { collegeR: 0, hostel: 0 },
     attendance: {
       att1: 0,
@@ -125,3 +125,8 @@ const teachers = [
   { id: 9, schedClasses: 5, name: "Diya Verma", delClasses: 3 },
   { id: 10, schedClasses: 5, name: "Advait Joshi", delClasses: 2 },
 ];
+
+const fee = {
+  hostel: 65000,
+  college: 136000,
+};
