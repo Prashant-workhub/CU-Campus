@@ -6,7 +6,7 @@
 .header {
   background-color: #381d2a;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0.5rem 0.5rem;
   color: aliceblue;
 }
@@ -19,10 +19,9 @@
 
 .dashboard {
   display: flex;
-  height: calc(100vh - 80px); /* adjust if header height differs */
+  height: calc(100vh - 80px);
 }
 
-/* Sidebar */
 .sidebar {
   width: 220px;
   background: linear-gradient(180deg, #2f5d8a, #244a6e);

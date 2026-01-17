@@ -12,7 +12,11 @@ let headHtml = document.querySelector(".header");
 let btnContent = "";
 let headContent = "";
 
-headContent += `<div class="pfp">
+headContent += `
+     <div class="pfp">
+    <img src='https://www.culko.in/assets-2025/img/head-foot/culko-logo-new.png' style="margin-left : 0px;" height='75rem'>
+    </div>
+    <div class="pfp">
     <img src="/data/images/pfp.png" height="75rem" />
     </div>
     <div class="name">
