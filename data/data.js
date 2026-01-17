@@ -3,7 +3,10 @@ export const students = [
     UID: "25LBCS1001",
     email: "25lbcs1001@gmail.com",
     pass: "example123",
+    assignP: 1,
+    phone: "+91 4902238420",
     name: "Hariom maurya",
+    scholarship: 27000,
     fee: { collegeR: 0, hostel: 65000 },
     attendance: {
       att1: 3,
@@ -19,7 +22,10 @@ export const students = [
     UID: "25LBCS1002",
     email: "25lbcs1002@gmail.com",
     pass: "example123",
+    assignP: 2,
+    phone: "+91 5902238420",
     name: "Madhav Agarwal",
+    scholarship: 33000,
     fee: { collegeR: 45230, hostel: 45000 },
     attendance: {
       att1: 1,
@@ -35,7 +41,10 @@ export const students = [
     UID: "25LBCS1003",
     email: "25lbcs1003@gmail.com",
     pass: "example123",
+    phone: "+91 6902238420",
+    assignP: 3,
     name: "Anshuman Shrivastav",
+    scholarship: 40000,
     fee: { collegeR: 5500, hostel: 6500 },
     attendance: {
       att1: 2,
@@ -51,7 +60,10 @@ export const students = [
     UID: "25LBCS1004",
     email: "25lbcs1004@gmail.com",
     pass: "example123",
+    assignP: "All Completed",
+    phone: "+91 7902238420",
     name: "Krishnam Rajawat",
+    scholarship: 36000,
     fee: { collegeR: 0, hostel: 0 },
     attendance: {
       att1: 0,
@@ -67,7 +79,10 @@ export const students = [
     UID: "25LBCS1005",
     email: "25lbcs1005@gmail.com",
     pass: "example123",
+    phone: "+91 8902238420",
+    assignP: 1,
     name: "Shivam kumar",
+    scholarship: 12000,
     fee: { collegeR: 25000, hostel: 6500 },
     attendance: {
       att1: 1,
@@ -83,7 +98,10 @@ export const students = [
     UID: "25LBCS1006",
     email: "25lbcs1006@gmail.com",
     pass: "example123",
+    phone: "+91 9902238420",
     name: "Sourabh Tiwari",
+    assignP: 4,
+    scholarship: 10000,
     fee: { collegeR: 20000, hostel: 30000 },
     attendance: {
       att1: 3,
@@ -100,6 +118,9 @@ export const students = [
     email: "25lbcs1007@gmail.com",
     pass: "example123",
     name: "Naitik khandelwal",
+    phone: "+91 7642238420",
+    assignP: "All Completed",
+    scholarship: 30000,
     fee: { collegeR: 10000, hostel: 3000 },
     attendance: {
       att1: 4,
@@ -113,30 +134,86 @@ export const students = [
   },
 ];
 
-const teachers = [
-  { id: 1, schedClasses: 5, name: "Aarav Sharma", delClasses: 4 },
-  { id: 2, schedClasses: 5, name: "Vihaan Iyer", delClasses: 2 },
-  { id: 3, schedClasses: 5, name: "Aditya Gupta", delClasses: 5 },
-  { id: 4, schedClasses: 5, name: "Ananya Singh", delClasses: 5 },
-  { id: 5, schedClasses: 5, name: "Ishaan Malhotra", delClasses: 3 },
-  { id: 6, schedClasses: 5, name: "Saanvi Reddy", delClasses: 1 },
-  { id: 7, schedClasses: 5, name: "Reyansh Kapoor", delClasses: 0 },
-  { id: 8, schedClasses: 5, name: "Ayaan Mukherjee", delClasses: 4 },
-  { id: 9, schedClasses: 5, name: "Diya Verma", delClasses: 3 },
-  { id: 10, schedClasses: 5, name: "Advait Joshi", delClasses: 2 },
+export const teachers = [
+  {
+    id: 1,
+    name: "Aarav Sharma",
+    course: "Data Science Fundamentals",
+    schedClasses: 5,
+    delClasses: 4,
+  },
+  {
+    id: 2,
+    name: "Vihaan Iyer",
+    course: "Object Oriented Programming Using JAVA",
+    schedClasses: 5,
+    delClasses: 2,
+  },
+  {
+    id: 3,
+    name: "Aditya Gupta",
+    course: "Competitive Programming Lab",
+    schedClasses: 5,
+    delClasses: 5,
+  },
+  {
+    id: 4,
+    name: "Ananya Singh",
+    course: "Aptitude 1",
+    schedClasses: 5,
+    delClasses: 5,
+  },
+  {
+    id: 5,
+    name: "Ishaan Malhotra",
+    course: "Basic Electrical and Electronics Engineering",
+    schedClasses: 5,
+    delClasses: 3,
+  },
+  {
+    id: 6,
+    name: "Saanvi Reddy",
+    course: "Linear Algebra and Vector Calculus",
+    schedClasses: 5,
+    delClasses: 1,
+  },
+  {
+    id: 7,
+    name: "Reyansh Kapoor",
+    course: "Physics for Computation Technologies",
+    schedClasses: 5,
+    delClasses: 0,
+  },
 ];
 
-const fee = {
+export const fee = {
   hostel: 65000,
+  laundary: 1600,
   college: 136000,
 };
 
-const courses = {
-  course1: "Data Science Fundamentals",
-  course2: "Object Oriented Programming Using JAVA",
-  course3: "Competitive Programming Lab",
-  course4: "Aptitude 1",
-  course5: "Basic Electrical and Electronics Engineering",
-  course6: "Linear Algebra and Vector Calculus",
-  course7: "Physics for Computation Technologies",
+export const contact = {
+  academicOffice: {
+    title: "Academic Office",
+    email: "academic@cu.edu.in",
+    phone: "+91 98765 43210",
+  },
+
+  feeDepartment: {
+    title: "Fee Department",
+    email: "fees@cu.edu.in",
+    phone: "+91 91234 56789",
+  },
+
+  departmentCoordinator: {
+    title: "Department Coordinator",
+    name: "Dr. A. Sharma",
+    email: "coordinator@cu.edu.in",
+  },
+
+  studentHelpdesk: {
+    title: "Student Helpdesk",
+    email: "helpdesk@cu.edu.in",
+    phone: "+91 90000 11111",
+  },
 };
