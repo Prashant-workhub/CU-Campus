@@ -1,0 +1,503 @@
+/* Travel Booking Login Form - Complete & Self-Contained */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.login-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.6s ease-out;
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #0066cc, #4a90e2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.login-header h1 {
+  color: #1a1a1a;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.025em;
+}
+
+.login-header p {
+  color: #6b7280;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Styles with Floating Labels */
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.form-group input {
+  width: 100%;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 16px 6px 16px;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  background: #ffffff;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-group input::placeholder {
+  color: transparent;
+}
+
+.form-group label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 400;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0066cc;
+  transform: translateY(0);
+}
+
+.form-group input:not(:focus):not(:placeholder-shown) + label {
+  color: #6b7280;
+}
+
+/* Password Field */
+.form-group:has(.password-toggle) input {
+  padding-right: 50px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #0066cc;
+}
+
+/* Radio Button Group */
+.form-group-radios {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  animation: fadeInUp 0.6s ease-out 0.3s backwards;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 100px;
+}
+
+.radio-label input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.radio-label input[type="radio"]:hover {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.15);
+}
+
+.radio-label input[type="radio"]:checked {
+  background: #0066cc;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);
+}
+
+.radio-label:hover {
+  color: #0066cc;
+  background: #f0f7ff;
+  border-color: #0066cc;
+}
+
+.radio-text {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  background: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 28px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideUp 0.6s ease-out 0.4s backwards;
+}
+
+.login-btn:hover {
+  background: #0052a3;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.login-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-text {
+  transition: opacity 0.2s ease;
+}
+
+.btn-loader {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #ffffff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-btn.loading .btn-text {
+  opacity: 0;
+}
+
+.login-btn.loading .btn-loader {
+  opacity: 1;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 28px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider span {
+  background: #ffffff;
+  color: #6b7280;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+/* Error States */
+.error-message {
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 6px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.error-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wrong-pass {
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 6px;
+  display: block;
+  min-height: 18px;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.form-group.error input {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.form-group.error input:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-group.error label {
+  color: #dc2626;
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.success-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-icon {
+  margin: 0 auto 20px;
+  animation: successBounce 0.6s ease-out;
+}
+
+@keyframes successBounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.success-message h3 {
+  color: #1a1a1a;
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.success-message p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    max-width: 100%;
+  }
+
+  .form-group-radios {
+    gap: 10px;
+  }
+
+  .radio-label {
+    padding: 9px 14px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 40px 24px;
+    border-radius: 16px;
+  }
+
+  .login-header h1 {
+    font-size: 1.625rem;
+  }
+
+  .login-header p {
+    font-size: 14px;
+  }
+
+  .form-group-radios {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .radio-label {
+    flex: 1 1 calc(33.333% - 6px);
+    min-width: 90px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .radio-text {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    padding: 16px 14px 6px 14px;
+    font-size: 16px;
+  }
+
+  .login-btn {
+    padding: 14px 20px;
+    min-height: 48px;
+    font-size: 15px;
+  }
+}
