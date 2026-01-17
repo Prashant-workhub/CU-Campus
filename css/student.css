@@ -1,14 +1,32 @@
+/* ===============================
+   RESET & GLOBAL
+================================ */
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* ===============================
+   HEADER
+================================ */
 .header {
   background-color: #381d2a;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0.5rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
   color: aliceblue;
+  transition: all 0.3s ease;
 }
 
 .name,
@@ -18,77 +36,118 @@
 }
 
 .logout button {
-  background-color: red;
-  padding: 0.5rem;
-  margin: 0.6rem;
-  border: 2px solid black;
-  border-radius: 0.7rem;
-}
-
-.logout :hover {
-  background-color: white;
+  background-color: #c62828;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  color: white;
   cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
 }
 
+.logout button:hover {
+  background-color: #a91d1d;
+  transform: scale(1.05);
+}
+
+/* ===============================
+   DASHBOARD LAYOUT
+================================ */
 .dashboard {
   display: flex;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 5rem);
+  transition: all 0.3s ease;
 }
 
+/* ===============================
+   SIDEBAR
+================================ */
 .sidebar {
-  width: 220px;
+  width: 14rem;
   background: linear-gradient(180deg, #2f5d8a, #244a6e);
-  padding: 20px 10px;
+  padding: 1.25rem 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-}
-
-.section {
-  display: none;
-  text-align: center;
-}
-
-.active-section {
-  display: block;
-}
-
+/* Sidebar nav item */
 .nav-item {
   background: transparent;
   border: none;
   color: #eaf2fb;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: left;
-  padding: 12px 14px;
+  padding: 0.75rem 0.9rem;
   cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.25s ease;
+  border-radius: 0.6rem;
   font-weight: 500;
+  transition:
+    background-color 0.25s ease,
+    padding-left 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
 }
 
 .nav-item:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  padding-left: 18px;
+  padding-left: 1.2rem;
 }
 
 .nav-item.active {
   background-color: rgba(255, 255, 255, 0.25);
   font-weight: 600;
   color: #ffffff;
+  transform: translateX(0.25rem);
 }
 
 .nav-item:focus {
   outline: none;
 }
 
+/* ===============================
+   CONTENT AREA
+================================ */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Sections */
+.section {
+  display: none;
+  text-align: center;
+  width: 100%;
+  animation: fadeIn 0.4s ease;
+}
+
+.active-section {
+  display: block;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   MAIN DASHBOARD CARDS
+================================ */
 .main-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -98,53 +157,81 @@
 .card {
   background: #aabd8c;
   padding: 2rem;
-  height: 10rem;
-  width: 25rem;
   border-radius: 1rem;
   text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.attendance-table {
+.card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   ATTENDANCE TABLE
+================================ */
+.attendance-table,
+.assignment-table {
   width: 100%;
-  max-width: 80.5rem;
+  max-width: 62.5rem;
   margin-top: 1.25rem;
   border-collapse: collapse;
   background-color: #ffffff;
-  border-radius: 0.625rem;
+  border-radius: 0.75rem;
   overflow: hidden;
+  animation: fadeIn 0.4s ease;
 }
 
-.attendance-table thead {
+.attendance-table thead,
+.assignment-table thead {
   background-color: #2f5d8a;
   color: #ffffff;
 }
 
 .attendance-table th,
-.attendance-table td {
+.attendance-table td,
+.assignment-table th,
+.assignment-table td {
   padding: 0.875rem 1rem;
   text-align: left;
   font-size: 0.95rem;
   line-height: 1.4;
+  transition: background-color 0.25s ease;
 }
 
-.attendance-table tbody tr:nth-child(even) {
+.attendance-table tbody tr:nth-child(even),
+.assignment-table tbody tr:nth-child(even) {
   background-color: #f5f7fa;
 }
 
-.attendance-table tbody tr:hover {
+.attendance-table tbody tr:hover,
+.assignment-table tbody tr:hover {
   background-color: #eef3f9;
 }
 
-.good {
+/* Status colors */
+.good,
+.submitted {
   color: #2e7d32;
   font-weight: 600;
 }
 
-.low {
+.low,
+.late {
   color: #c62828;
   font-weight: 600;
 }
 
+.pending {
+  color: #f57c00;
+  font-weight: 600;
+}
+
+/* ===============================
+   FEE COUNTER
+================================ */
 .fee-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
@@ -154,30 +241,33 @@
   max-width: 62.5rem;
 }
 
-/* Individual card */
 .fee-card {
   background-color: #ffffff;
   border-radius: 0.75rem;
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Title */
+.fee-card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15);
+}
+
 .fee-card h3 {
   font-size: 1rem;
   margin-bottom: 0.75rem;
   color: #2f5d8a;
 }
 
-/* Amount */
 .amount {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #333333;
 }
 
-/* Colors */
 .scholarship {
   color: #2e7d32;
 }
@@ -190,52 +280,9 @@
   color: #c62828;
 }
 
-.assignment-table {
-  width: 100%;
-  max-width: 62.5rem;
-  margin-top: 1.5rem;
-  border-collapse: collapse;
-  background-color: #ffffff;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
-
-.assignment-table thead {
-  background-color: #2f5d8a;
-  color: #ffffff;
-}
-
-.assignment-table th,
-.assignment-table td {
-  padding: 0.875rem 1rem;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-.assignment-table tbody tr:nth-child(even) {
-  background-color: #f5f7fa;
-}
-
-.assignment-table tbody tr:hover {
-  background-color: #eef3f9;
-}
-
-/* Status colors */
-.submitted {
-  color: #2e7d32;
-  font-weight: 600;
-}
-
-.pending {
-  color: #f57c00;
-  font-weight: 600;
-}
-
-.late {
-  color: #c62828;
-  font-weight: 600;
-}
-
+/* ===============================
+   CONTACT SECTION
+================================ */
 .contact-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -250,6 +297,14 @@
   border-radius: 0.75rem;
   padding: 1.5rem;
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15);
 }
 
 .contact-card h3 {
@@ -262,4 +317,60 @@
   font-size: 0.95rem;
   line-height: 1.6;
   color: #333333;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media (max-width: 48rem) {
+  .header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+
+  a {
+    text-decoration: solid;
+    font-family:
+      "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+      Arial, sans-serif;
+    font-size: larger;
+    color: red;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-between;
+  }
+
+  .nav-item {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .content {
+    align-items: flex-start;
+  }
+
+  .main-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .fee-cards,
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .attendance-table,
+  .assignment-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
