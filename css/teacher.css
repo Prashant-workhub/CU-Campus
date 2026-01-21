@@ -101,11 +101,13 @@ body {
 .content {
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1.25rem;
   background-color: #ffffff;
   transition: all 0.3s ease;
+  overflow-y: auto;
 }
 
 .section {
@@ -113,10 +115,12 @@ body {
   text-align: center;
   width: 100%;
   animation: fadeIn 0.4s ease;
+  flex-direction: column;
+  align-items: center;
 }
 
 .active-section {
-  display: block;
+  display: flex;
 }
 
 /* Fade animation */
@@ -135,6 +139,9 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  width: 100%;
+  max-width: 62.5rem;
+  margin: 0 auto;
 }
 
 .card {
@@ -159,8 +166,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.5rem;
-  margin-top: 1.5rem;
-  width: 100%;
+  margin: 1.5rem auto 0;
+  width: 90%;
   max-width: 62.5rem;
 }
 
@@ -189,4 +196,119 @@ body {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #333333;
+}
+
+.attendance-table,
+.assignment-table {
+  width: 90%;
+  max-width: 62.5rem;
+  margin: 1.25rem auto 0;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease;
+}
+
+.attendance-table thead,
+.assignment-table thead {
+  background-color: #2f5d8a;
+  color: #ffffff;
+}
+
+.attendance-table th,
+.attendance-table td,
+.assignment-table th,
+.assignment-table td {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: background-color 0.25s ease;
+}
+
+.attendance-table tbody tr:nth-child(even),
+.assignment-table tbody tr:nth-child(even) {
+  background-color: #f5f7fa;
+}
+
+.attendance-table tbody tr:hover,
+.assignment-table tbody tr:hover {
+  background-color: #eef3f9;
+}
+
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.2rem;
+  margin: 0.3rem;
+}
+
+/* ===============================
+   RESPONSIVE OPTIMIZATION
+================================ */
+@media (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .attendance-table,
+  .assignment-table {
+    width: 95%;
+    font-size: 0.85rem;
+  }
+
+  .attendance-table th,
+  .attendance-table td,
+  .assignment-table th,
+  .assignment-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .contact-cards {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.75rem;
+  }
+
+  .nav-item {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .content {
+    padding: 0.75rem;
+  }
+
+  .attendance-table,
+  .assignment-table {
+    width: 98%;
+    font-size: 0.75rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .attendance-table th,
+  .attendance-table td,
+  .assignment-table th,
+  .assignment-table td {
+    padding: 0.4rem 0.5rem;
+  }
 }

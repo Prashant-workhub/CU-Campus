@@ -65,6 +65,7 @@ document
         localStorage.setItem("pass", password);
         localStorage.setItem("userType", "teacher");
         localStorage.setItem("teacherData", JSON.stringify(teacherFound));
+        localStorage.setItem("allStudents", JSON.stringify(students));
         document.querySelector(".wrong-pass").innerHTML = "";
         window.location.href = "/teacher/dashboard.html";
       } else {

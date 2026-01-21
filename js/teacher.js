@@ -30,7 +30,7 @@ headContent += `
   <div class="logout">
     <button onclick="logout()">Sign Out</button>
   </div>
-`;
+  `;
 
 headHtml.innerHTML = headContent;
 
@@ -64,9 +64,24 @@ btnContent += `
   </div>
 
   <div id="attendance" class="section">
-    <h1>Student Attendance Management</h1>
-    <p style="margin-top: 2rem; color: #666;">Attendance management feature coming soon...</p>
-  </div>
+    <div class="date">
+      <h3>${dayjs().format("DD/MM/YYYY")}</h3>
+    </div>
+          <h1>Student Attendance Management</h1>
+          <table class="attendance-table">
+            <thead>
+              <tr>
+                <th>UID :</th>
+                <th>Section</th>
+                <th>Name</th>
+                <th>Mark Attendance</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${bodystudentTable()}
+            </tbody>
+          </table>
+        </div>
 
   <div id="fees" class="section">
     <h1>Fee Management</h1>
@@ -108,21 +123,18 @@ btnContent += `
       </div>
     </div>
   </div>
-`;
+  `;
 
 btnhtml.innerHTML += btnContent;
-
 
 const buttons = document.querySelectorAll(".sidebar-btn");
 const sections = document.querySelectorAll(".section");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    
     buttons.forEach((btn) => btn.classList.remove("active"));
     sections.forEach((sec) => sec.classList.remove("active-section"));
 
-    
     button.classList.add("active");
     const target = button.dataset.target;
     document.getElementById(target).classList.add("active-section");
@@ -137,4 +149,17 @@ function logout() {
   localStorage.setItem("userType", "");
   localStorage.setItem("studentData", "");
   window.location.href = "/index.html";
+}
+
+function bodystudentTable() {
+  let html = "";
+  students.forEach((student) => {
+    html += `<tr>
+                <td>${student.UID}</td>
+                <td>${student.name}</td>
+                <td>${student.sec}</td>
+                <td><input type="checkbox" value="Mark" /></td>
+              </tr>`;
+  });
+  return html;
 }

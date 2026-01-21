@@ -73,19 +73,19 @@ btnContent += `
         <div id="attendance" class="section">
                 <h1>Attendance Overview</h1>
 
-            <table class="attendance-table">
-                <thead>
-                <tr>
-                    <th>Course</th>
-                    <th>Faculty</th>
-                    <th>Attendance (%)</th>
-                    <th>Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                ${courseAttendance(matchingitem, attHTML)}
-                </tbody>
-            </table>
+                <table class="attendance-table">
+                    <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Faculty</th>
+                        <th>Attendance (%)</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    ${courseAttendance(matchingitem, attHTML)}
+                    </tbody>
+                </table>
                 </div>
 
             <div id="fees" class="section">
