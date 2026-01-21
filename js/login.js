@@ -7,6 +7,7 @@ window.onload = () => {
   localStorage.setItem("pass", "");
   localStorage.setItem("userType", "");
   localStorage.setItem("studentData", "");
+  localStorage.setItem("teacherData", "");
 };
 
 document
@@ -54,22 +55,17 @@ document
         localStorage.setItem("IsLogin", false);
       }
     } else if (userType === "teacher") {
-      // document.querySelector(".wrong-pass").innerHTML =
-      //   "Teacher login is coming soon";
-      // localStorage.setItem("IsLogin", false);
-
-      const teacherFound = teachers.find((teacher) => {
-        teacher.email === email && teacher.pass === password;
-      });
+      const teacherFound = teachers.find(
+        (teacher) => teacher.email === email && teacher.pass === password,
+      );
 
       if (teacherFound) {
         localStorage.setItem("IsLogin", true);
         localStorage.setItem("email", email);
         localStorage.setItem("pass", password);
         localStorage.setItem("userType", "teacher");
-        localStorage.setItem("teacherdata", JSON.stringify(teacherFound));
+        localStorage.setItem("teacherData", JSON.stringify(teacherFound));
         document.querySelector(".wrong-pass").innerHTML = "";
-
         window.location.href = "/teacher/dashboard.html";
       } else {
         document.querySelector(".error-message").innerHTML =
