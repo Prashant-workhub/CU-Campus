@@ -1,4 +1,5 @@
 import { students } from "../data/data.js";
+import { teachers } from "../data/data.js";
 
 window.onload = () => {
   localStorage.setItem("IsLogin", false);
@@ -21,11 +22,9 @@ document
     const password = dataObject.password;
     const userType = dataObject.userType;
 
-    // Clear previous error messages
     document.querySelector(".error-message").innerHTML = "";
     document.querySelector(".wrong-pass").innerHTML = "";
 
-    // Check if user type is selected
     if (!userType) {
       document.querySelector(".wrong-pass").innerHTML =
         "Please select a user type";
@@ -33,14 +32,12 @@ document
       return;
     }
 
-    // Student Login
     if (userType === "student") {
       const studentFound = students.find(
         (student) => student.email === email && student.pass === password,
       );
 
       if (studentFound) {
-        // Login successful
         localStorage.setItem("IsLogin", true);
         localStorage.setItem("email", email);
         localStorage.setItem("pass", password);
@@ -48,10 +45,8 @@ document
         localStorage.setItem("studentData", JSON.stringify(studentFound));
         document.querySelector(".wrong-pass").innerHTML = "";
 
-        // Redirect to student dashboard
         window.location.href = "/student/dashboard.html";
       } else {
-        // Login failed
         document.querySelector(".error-message").innerHTML =
           "Email Or Password didn't Match";
         document.querySelector(".wrong-pass").innerHTML =
@@ -59,9 +54,30 @@ document
         localStorage.setItem("IsLogin", false);
       }
     } else if (userType === "teacher") {
-      document.querySelector(".wrong-pass").innerHTML =
-        "Teacher login is coming soon";
-      localStorage.setItem("IsLogin", false);
+      // document.querySelector(".wrong-pass").innerHTML =
+      //   "Teacher login is coming soon";
+      // localStorage.setItem("IsLogin", false);
+
+      const teacherFound = teachers.find((teacher) => {
+        teacher.email === email && teacher.pass === password;
+      });
+
+      if (teacherFound) {
+        localStorage.setItem("IsLogin", true);
+        localStorage.setItem("email", email);
+        localStorage.setItem("pass", password);
+        localStorage.setItem("userType", "teacher");
+        localStorage.setItem("teacherdata", JSON.stringify(teacherFound));
+        document.querySelector(".wrong-pass").innerHTML = "";
+
+        window.location.href = "/teacher/dashboard.html";
+      } else {
+        document.querySelector(".error-message").innerHTML =
+          "Email Or Password didn't Match";
+        document.querySelector(".wrong-pass").innerHTML =
+          "Email Or Password didn't Match";
+        localStorage.setItem("IsLogin", false);
+      }
     } else if (userType === "admin") {
       document.querySelector(".wrong-pass").innerHTML =
         "Admin login is coming soon";

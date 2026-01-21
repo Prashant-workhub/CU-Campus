@@ -38,6 +38,25 @@ export const students = [
     },
   },
   {
+    UID: "25LBCS1075",
+    email: "25lbcs1075@gmail.com",
+    pass: "example123",
+    assignP: 2,
+    phone: "+91 3924729420",
+    name: "Aditya Verma",
+    scholarship: 40000,
+    fee: { collegeR: 1030, hostel: 15000 },
+    attendance: {
+      att1: 1,
+      att2: 2,
+      att3: 3,
+      att4: 4,
+      att5: 5,
+      att6: 1,
+      att7: 2,
+    },
+  },
+  {
     UID: "25LBCS1003",
     email: "25lbcs1003@gmail.com",
     pass: "example123",
@@ -141,6 +160,8 @@ export const teachers = [
     course: "Data Science Fundamentals",
     schedClasses: 5,
     delClasses: 4,
+    email: "aarav.l@culkomail.com",
+    pass: "hello123",
   },
   {
     id: 2,
@@ -148,6 +169,8 @@ export const teachers = [
     course: "Object Oriented Programming Using JAVA",
     schedClasses: 5,
     delClasses: 2,
+    email: "vihaan.l@culkomail.com",
+    pass: "hello123",
   },
   {
     id: 3,
@@ -155,6 +178,8 @@ export const teachers = [
     course: "Competitive Programming Lab",
     schedClasses: 5,
     delClasses: 5,
+    email: "aditya.l@culkomail.com",
+    pass: "hello123",
   },
   {
     id: 4,
@@ -162,6 +187,8 @@ export const teachers = [
     course: "Aptitude 1",
     schedClasses: 5,
     delClasses: 5,
+    email: "ananya.l@culkomail.com",
+    pass: "hello123",
   },
   {
     id: 5,
@@ -169,6 +196,8 @@ export const teachers = [
     course: "Basic Electrical and Electronics Engineering",
     schedClasses: 5,
     delClasses: 3,
+    email: "ishaan.l@culkomail.com",
+    pass: "hello123",
   },
   {
     id: 6,
@@ -176,6 +205,8 @@ export const teachers = [
     course: "Linear Algebra and Vector Calculus",
     schedClasses: 5,
     delClasses: 1,
+    email: "saanvi.l@culkomail.com",
+    pass: "hello123",
   },
   {
     id: 7,
@@ -183,6 +214,8 @@ export const teachers = [
     course: "Physics for Computation Technologies",
     schedClasses: 5,
     delClasses: 0,
+    email: "reyansh.l@culkomail.com",
+    pass: "hello123",
   },
 ];
 
