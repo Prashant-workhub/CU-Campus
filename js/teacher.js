@@ -72,8 +72,8 @@ btnContent += `
             <thead>
               <tr>
                 <th>UID :</th>
-                <th>Section</th>
                 <th>Name</th>
+                <th>Section</th>
                 <th>Mark Attendance</th>
               </tr>
             </thead>
@@ -83,7 +83,8 @@ btnContent += `
           </table>
 
           <div style="margin : 2rem 1rem;">
-            <button class="submit" onclick="submit()">Submit </button>
+            <button class="submit" id="submitButton" >Submit </button>
+            
           </div>
         </div>
 
@@ -162,8 +163,30 @@ function bodystudentTable() {
                 <td>${student.UID}</td>
                 <td>${student.name}</td>
                 <td>${student.sec}</td>
-                <td><input type="checkbox" value="Mark" /></td>
+                <td><input type="checkbox" class="check-a" value="Mark" /></td>
               </tr>`;
   });
   return html;
 }
+
+document.getElementById("submitButton").addEventListener("click", () => {
+  const submitBtn = document.getElementById("submitButton");
+  const originalText = submitBtn.textContent;
+
+  // Show loading state
+  submitBtn.disabled = true;
+  submitBtn.classList.add("loading");
+  submitBtn.textContent = "Submitting...";
+
+  // Wait 2 seconds then uncheck all checkboxes
+  setTimeout(() => {
+    document
+      .querySelectorAll("input[type=checkbox]")
+      .forEach((el) => (el.checked = false));
+
+    // Reset button state
+    submitBtn.disabled = false;
+    submitBtn.classList.remove("loading");
+    submitBtn.textContent = originalText;
+  }, 2000);
+});
