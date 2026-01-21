@@ -1,7 +1,7 @@
 export const students = [
   {
     UID: "25LBCS1001",
-    email: "25lbcs1001@gmail.com",
+    email: "25lbcs1001@culkomail.com",
     pass: "example123",
     assignP: 1,
     phone: "+91 4902238420",
@@ -20,7 +20,7 @@ export const students = [
   },
   {
     UID: "25LBCS1002",
-    email: "25lbcs1002@gmail.com",
+    email: "25lbcs1002@culkomail.com",
     pass: "example123",
     assignP: 2,
     phone: "+91 5902238420",
@@ -39,7 +39,7 @@ export const students = [
   },
   {
     UID: "25LBCS1075",
-    email: "25lbcs1075@gmail.com",
+    email: "25lbcs1075@culkomail.com",
     pass: "example123",
     assignP: 2,
     phone: "+91 3924729420",
@@ -58,7 +58,7 @@ export const students = [
   },
   {
     UID: "25LBCS1003",
-    email: "25lbcs1003@gmail.com",
+    email: "25lbcs1003@culkomail.com",
     pass: "example123",
     phone: "+91 6902238420",
     assignP: 3,
@@ -77,7 +77,7 @@ export const students = [
   },
   {
     UID: "25LBCS1004",
-    email: "25lbcs1004@gmail.com",
+    email: "25lbcs1004@culkomail.com",
     pass: "example123",
     assignP: "All Completed",
     phone: "+91 7902238420",
@@ -96,7 +96,7 @@ export const students = [
   },
   {
     UID: "25LBCS1005",
-    email: "25lbcs1005@gmail.com",
+    email: "25lbcs1005@culkomail.com",
     pass: "example123",
     phone: "+91 8902238420",
     assignP: 1,
@@ -115,7 +115,7 @@ export const students = [
   },
   {
     UID: "25LBCS1006",
-    email: "25lbcs1006@gmail.com",
+    email: "25lbcs1006@culkomail.com",
     pass: "example123",
     phone: "+91 9902238420",
     name: "Sourabh Tiwari",
@@ -134,7 +134,7 @@ export const students = [
   },
   {
     UID: "25LBCS1007",
-    email: "25lbcs1007@gmail.com",
+    email: "25lbcs1007@culkomail.com",
     pass: "example123",
     name: "Naitik khandelwal",
     phone: "+91 7642238420",

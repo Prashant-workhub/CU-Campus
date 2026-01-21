@@ -3,56 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Dashboard</title>
+    <title>Teacher Dashboard</title>
     <link rel="stylesheet" href="/css/teacher.css" />
   </head>
 
   <body>
     <div class="header">
-       <div class="pfp">
-        <img src='https://www.culko.in/assets-2025/img/head-foot/culko-logo-new.png' style="margin-left : 0px;" height='75rem'>
-        </div>
-        <div class="pfp">
+      <div class="pfp">
+        <img
+          src="https://www.culko.in/assets-2025/img/head-foot/culko-logo-new.png"
+          style="margin-left: 0px"
+          height="75rem"
+        />
+      </div>
+      <div class="pfp">
         <img src="/data/images/teachpfp.png" height="75rem" />
-        </div>
-        <div class="name">
+      </div>
+      <div class="name">
         Teacher Name :
         <p>Dummy name</p>
-        </div>
-        <div class="UID">
+      </div>
+      <div class="UID">
         ID :
         <p>Dummy id</p>
-        </div>
+      </div>
 
-        <div class="logout">
-        <button
-            onclick="logout()"
-        >
-            Sign Out
+      <div class="logout">
+        <button onclick="logout()">Sign Out</button>
+      </div>
+    </div>
+    <div class="dashboard">
+      <div class="sidebar">
+        <button class="nav-item sidebar-btn active" data-target="main">
+          Main
         </button>
-        </div>
+        <button class="nav-item sidebar-btn" data-target="attendance">
+          Attendance
+        </button>
+        <button class="nav-item sidebar-btn" data-target="fees">
+          Fee Counter
+        </button>
+        <button class="nav-item sidebar-btn" data-target="assignment">
+          Assignment
+        </button>
+        <button class="nav-item sidebar-btn" data-target="contact">
+          Contact Info
+        </button>
+      </div>
+      <div class="content"></div>
     </div>
-        <div class="dashboard">
-             <div class="sidebar">
-                <button class="nav-item sidebar-btn active" data-target="main">
-                Main
-                </button>
-                <button class="nav-item sidebar-btn" data-target="attendance">
-                Attendance
-                </button>
-                <button class="nav-item sidebar-btn" data-target="fees">
-                Fee Counter
-                </button>
-                <button class="nav-item sidebar-btn" data-target="assignment">
-                Assignment
-                </button>
-                <button class="nav-item sidebar-btn" data-target="contact">
-                Contact Info
-                </button>
-                </div>
-        </div>
-    </div>
-    </div>
+
     <script src="/js/auth.js"></script>
     <script type="module" src="/js/teacher.js"></script>
   </body>

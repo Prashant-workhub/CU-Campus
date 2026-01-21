@@ -272,3 +272,13 @@ function courseAttendance(matchingItem, attHTML) {
 
   return attHTML;
 }
+
+// Logout function
+function logout() {
+  localStorage.setItem("IsLogin", false);
+  localStorage.setItem("email", "");
+  localStorage.setItem("pass", "");
+  localStorage.setItem("userType", "");
+  localStorage.setItem("studentData", "");
+  window.location.href = "/index.html";
+}
