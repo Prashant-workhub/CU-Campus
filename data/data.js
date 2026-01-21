@@ -155,7 +155,7 @@ export const students = [
 
 export const teachers = [
   {
-    id: 1,
+    id: "l001234",
     name: "Aarav Sharma",
     course: "Data Science Fundamentals",
     schedClasses: 5,
@@ -164,7 +164,7 @@ export const teachers = [
     pass: "hello123",
   },
   {
-    id: 2,
+    id: "l0012345",
     name: "Vihaan Iyer",
     course: "Object Oriented Programming Using JAVA",
     schedClasses: 5,
@@ -173,7 +173,7 @@ export const teachers = [
     pass: "hello123",
   },
   {
-    id: 3,
+    id: "l0012",
     name: "Aditya Gupta",
     course: "Competitive Programming Lab",
     schedClasses: 5,
@@ -182,7 +182,7 @@ export const teachers = [
     pass: "hello123",
   },
   {
-    id: 4,
+    id: "l001234",
     name: "Ananya Singh",
     course: "Aptitude 1",
     schedClasses: 5,
@@ -191,7 +191,7 @@ export const teachers = [
     pass: "hello123",
   },
   {
-    id: 5,
+    id: "l004876",
     name: "Ishaan Malhotra",
     course: "Basic Electrical and Electronics Engineering",
     schedClasses: 5,
@@ -200,7 +200,7 @@ export const teachers = [
     pass: "hello123",
   },
   {
-    id: 6,
+    id: "l001312",
     name: "Saanvi Reddy",
     course: "Linear Algebra and Vector Calculus",
     schedClasses: 5,
@@ -209,7 +209,7 @@ export const teachers = [
     pass: "hello123",
   },
   {
-    id: 7,
+    id: "l003142",
     name: "Reyansh Kapoor",
     course: "Physics for Computation Technologies",
     schedClasses: 5,
