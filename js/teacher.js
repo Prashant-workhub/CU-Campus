@@ -81,6 +81,10 @@ btnContent += `
               ${bodystudentTable()}
             </tbody>
           </table>
+
+          <div style="margin : 2rem 1rem;">
+            <button class="submit" onclick="submit()">Submit </button>
+          </div>
         </div>
 
   <div id="fees" class="section">

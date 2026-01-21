@@ -9,6 +9,7 @@ window.onload = () => {
 function logout() {
   localStorage.removeItem("studentData");
   localStorage.removeItem("teacherData");
+  localStorage.removeItem("allStudents");
   localStorage.removeItem("isLogin");
   window.location.href = "/../index.html";
 }
