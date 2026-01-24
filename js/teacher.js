@@ -11,6 +11,7 @@ let btnhtml = document.querySelector(".content");
 let headHtml = document.querySelector(".header");
 let btnContent = "";
 let headContent = "";
+let ttContent = "";
 
 headContent += `
   <div class="pfp">
@@ -88,10 +89,28 @@ btnContent += `
           </div>
         </div>
 
-  <div id="fees" class="section">
-    <h1>Fee Management</h1>
-    <p style="margin-top: 2rem; color: #666;">Fee management feature coming soon...</p>
-  </div>
+        <div id="Scheduled-classes" class="section">
+          <div class="days">
+            <button class="days-btn tt-btn active" data-target="monday">
+              Monday
+            </button>
+            <button class="days-btn tt-btn" data-target="tuesday">
+              Tuesday
+            </button>
+            <button class="days-btn tt-btn" data-target="wednesday">
+              Wednesday
+            </button>
+            <button class="days-btn tt-btn" data-target="thursday">
+              Thursday
+            </button>
+            <button class="days-btn tt-btn" data-target="friday">Friday</button>
+            <button class="days-btn tt-btn" data-target="saturday">
+              Saturday
+            </button>
+            <button class="days-btn tt-btn" data-target="Sunday">Sunday</button>
+          </div>
+          <div class="tt-content"></div>
+        </div>
 
   <div id="assignment" class="section">
     <h1>Assignment Tracking</h1>
@@ -132,6 +151,40 @@ btnContent += `
 
 btnhtml.innerHTML += btnContent;
 
+// Now query and populate the timetable content after it's added to DOM
+let ttHtml = document.querySelector(".tt-content");
+
+ttContent += ` <div class="days-section active-days-section" id="monday">
+              <h1>Monday Schedule</h1>
+              <p>No classes scheduled</p>
+            </div>
+            <div class="days-section" id="tuesday">
+              <h1>Tuesday Schedule</h1>
+              <p>No classes scheduled</p>
+            </div>
+            <div class="days-section" id="wednesday">
+              <h1>Wednesday Schedule</h1>
+              <p>No classes scheduled</p>
+            </div>
+            <div class="days-section" id="thursday">
+              <h1>Thursday Schedule</h1>
+              <p>No classes scheduled</p>
+            </div>
+            <div class="days-section" id="friday">
+              <h1>Friday Schedule</h1>
+              <p>No classes scheduled</p>
+            </div>
+            <div class="days-section" id="saturday">
+              <h1>Saturday Schedule</h1>
+              <p>No classes scheduled</p>
+            </div>
+            <div class="days-section" id="Sunday">
+              <h1>Sunday Schedule</h1>
+              <p>No classes scheduled</p>
+            </div>`;
+
+ttHtml.innerHTML += ttContent;
+
 const buttons = document.querySelectorAll(".sidebar-btn");
 const sections = document.querySelectorAll(".section");
 
@@ -143,6 +196,20 @@ buttons.forEach((button) => {
     button.classList.add("active");
     const target = button.dataset.target;
     document.getElementById(target).classList.add("active-section");
+  });
+});
+
+const btns = document.querySelectorAll(".days-btn");
+const daysSections = document.querySelectorAll(".days-section");
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btns.forEach((b) => b.classList.remove("active"));
+    daysSections.forEach((sec) => sec.classList.remove("active-days-section"));
+
+    btn.classList.add("active");
+    const target = btn.dataset.target;
+    document.getElementById(target).classList.add("active-days-section");
   });
 });
 
